@@ -41,4 +41,11 @@ QUnit.module('Тестируем функцию plain', function () {
 		assert.deepEqual(plain([[[[[1, 2], 3]]]]), [ 1, 2, 3 ]);
 	});
 
+	QUnit.test('Работает при пустом вводе', function (assert) {
+		assert.deepEqual(plain(), null);
+	});
+
+	QUnit.test('Работает при невалидном вводе', function (assert) {
+		assert.deepEqual(plain(1231), null);
+	});
 });
